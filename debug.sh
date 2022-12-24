@@ -7,9 +7,6 @@ cd $SCRIPT_PATH
 # listen for GDB connection on port 1234 and stop execution on startup
 (build/qemu-system-arm -machine netduino2 -kernel ../output/output.elf -gdb tcp::1234 -S &)
 
-# TODO: building the wrong platform!!! need stm32f205
-# (gdb-multiarch ../output/output.elf &)
-
 gdb-multiarch -q --nh \
   -ex 'set architecture arm' \
   -ex 'file ../output/output.elf' \
